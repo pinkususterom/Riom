@@ -835,8 +835,13 @@ function CelebrationScreen() {
         {/* Visual heart crown ring */}
         <motion.div
           initial={{ scale: 0.2, rotate: -40, opacity: 0 }}
-          animate={{ scale: [1, 1.15, 1], rotate: 0, opacity: 1 }}
-          transition={{ duration: 0.8, type: "spring" }}
+          animate={{ scale: 1, rotate: 0, opacity: 1 }}
+          transition={{ 
+            type: "spring",
+            stiffness: 120,
+            damping: 12,
+            duration: 0.8
+          }}
           className="w-24 h-24 md:w-30 md:h-30 bg-[#FFD700]/15 border border-[#D4AF37]/40 rounded-full flex items-center justify-center text-rose-500 mb-8 shadow-inner"
         >
           <Heart className="w-12 h-12 md:w-16 md:h-16 text-[#FF1493] fill-[#FF1493] filter drop-shadow-[0_0_10px_rgba(255,105,180,0.5)]" />
