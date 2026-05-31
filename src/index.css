@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-cursive: "Dancing Script", cursive;
+  --font-love: "Great Vibes", cursive;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-rose-soft: #FFC0CB;
+  --color-pink-blush: #FFE4E1;
+  --color-cream-warm: #FFFDD0;
+  --color-gold-accent: #D4AF37;
+  
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #FFFDD0; /* cream-warm base background */
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Custom styles for parchment scrollbar/decorations if any */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDD0;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFC0CB;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFE4E1;
+}
+
