@@ -16,6 +16,7 @@ interface PolaroidData {
   src: string;
   caption: string;
   rotate: string;
+  fallback: string;
 }
 
 const POLAROIDS: PolaroidData[] = [
@@ -23,25 +24,29 @@ const POLAROIDS: PolaroidData[] = [
     id: 1,
     src: "/IMG-20260531-WA0002_2.jpg",
     caption: "Mera blush dekho baby... Pure din me na jaane kitni baar aapko nihar kar aise hi muskurata hu! 🙈💛 Mera dil bas aapka hi hai!",
-    rotate: "-rotate-3 md:-rotate-2 hover:rotate-0"
+    rotate: "-rotate-3 md:-rotate-2 hover:rotate-0",
+    fallback: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600"
   },
   {
     id: 2,
     src: "/IMG-20260531-WA0003_2.jpg",
     caption: "Suno jaan, jab aap muskurati ho na, toh meri life ka sara stress gayab ho jata hai... My ultimate medicine! 🥰✨",
-    rotate: "rotate-2 md:rotate-3 hover:rotate-0"
+    rotate: "rotate-2 md:rotate-3 hover:rotate-0",
+    fallback: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600"
   },
   {
     id: 3,
     src: "/IMG-20260531-WA0000_2.jpg",
     caption: "Aur jab meri wild jaan thodi shant hoti hai, toh mera thobda bhi aisa cute sad pouting ho jata hai... 🥺💖 Smile karo na!",
-    rotate: "-rotate-1 hover:rotate-0"
+    rotate: "-rotate-1 hover:rotate-0",
+    fallback: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=600"
   },
   {
     id: 4,
     src: "/IMG-20260531-WA0001_2.jpg",
     caption: "Kitna pyaal karta hu mai aapse, aapko khud nahi maloom! Riom is always here for you... forever ♾️💘",
-    rotate: "rotate-3 hover:rotate-0"
+    rotate: "rotate-3 hover:rotate-0",
+    fallback: "https://images.unsplash.com/photo-1501901609772-df0848060b33?q=80&w=600"
   }
 ];
 
@@ -563,7 +568,7 @@ export default function App() {
                                   referrerPolicy="no-referrer"
                                   onError={(e) => {
                                     e.currentTarget.onerror = null; 
-                                    e.currentTarget.src = "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600";
+                                    e.currentTarget.src = card.fallback;
                                   }}
                                 />
                                 {/* Vintage Polaroid flash vignette glare overlay */}
